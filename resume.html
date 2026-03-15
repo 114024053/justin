@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>楊程竣 - 個人履歷</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", Arial, sans-serif; margin: 0; background: #f5f6fa; color: #333; }
+        header { background: #34495e; color: white; text-align: center; padding: 40px; }
+        header h1 { margin: 0; font-size: 40px; }
+        .profile-img { 
+            width: 180px; height: 180px; border-radius: 50%; 
+            object-fit: cover; margin-top: 20px; border: 5px solid white; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        section { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        h2 { border-left: 5px solid #3498db; padding-left: 15px; margin-bottom: 20px; color: #2c3e50; }
+        .skill { display: inline-block; background: #3498db; color: white; padding: 8px 15px; margin: 5px; border-radius: 20px; font-size: 14px; }
+        .contact-info p { margin: 10px 0; }
+        button { background: #2ecc71; color: white; border: none; padding: 12px 25px; border-radius: 30px; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        button:hover { background: #27ae60; transform: scale(1.05); }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>楊程竣</h1>
+    <p>亞洲大學 資訊傳播學系 | 學號 114024053</p>
+    <img src="photo.jpg" class="profile-img" alt="楊程竣的個人照">
+</header>
+
+<section>
+    <h2>自我介紹 About Me</h2>
+    <p>您好，我是楊程竣，就讀於亞洲大學資訊傳播學系。我熱衷於數位媒體與影像製作，具備基礎的攝影、剪輯與網頁設計能力。我喜歡挑戰新事物，並致力於將創意轉化為有影響力的數位內容。</p>
+</section>
+
+<section>
+    <h2>技能專長 Skills</h2>
+    <div class="skill">Photography 攝影</div>
+    <div class="skill">Video Editing 影片剪輯</div>
+    <div class="skill">Adobe Illustrator</div>
+    <div class="skill">HTML / CSS</div>
+    <div class="skill">Creative Design</div>
+</section>
+
+<section>
+    <h2>作品專案 Projects</h2>
+    <ul>
+        <li><strong>環保專題：</strong>咖啡渣手工肥皂再利用</li>
+        <li><strong>影像創作：</strong>霧峰農會酒莊訪談剪輯</li>
+        <li><strong>網頁開發：</strong>個人數位履歷網站設計</li>
+    </ul>
+</section>
+
+<section class="contact-info">
+    <h2>聯絡方式 Contact</h2>
+    <p>📧 Email：<a href="mailto:blanket9606160501@gmail.com" style="color:#3498db;">blanket9606160501@gmail.com</a></p>
+    <p>📸 Instagram：<a href="https://www.instagram.com/yang._0616" target="_blank" style="color:#3498db;">yang._0616</a></p>
+    <br>
+    <button onclick="showMessage()">與我聯絡</button>
+    <p id="msg" style="margin-top:15px; color:#27ae60; font-weight:bold;"></p>
+</section>
+
+<footer>
+    © 2026 楊程竣 | Powered by GitHub Pages
+</footer>
+
+<script>
+    function showMessage(){
+        document.getElementById("msg").innerHTML = "✨ 感謝您的瀏覽！歡迎透過 Email 與我聯繫。";
+    }
+</script>
+
+</body>
+</html>
