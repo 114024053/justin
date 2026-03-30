@@ -3,96 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>楊程竣 - 專業數位履歷</title>
+    <title>楊程竣 - 個人履歷</title>
     <style>
         :root {
-            --sidebar-bg: #4a4a4a;
+            --sidebar-bg: #5a5a5a;
             --main-bg: #ffffff;
             --text-dark: #333333;
+            --text-light: #ffffff;
             --accent-color: #3498db;
-            --ig-gradient: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            --email-color: #2ecc71;
         }
 
         body {
-            font-family: "Microsoft JhengHei", sans-serif;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
             margin: 0;
-            background: #dcdcdc;
+            background: #e0e0e0;
             display: flex;
             justify-content: center;
-            padding: 50px 0;
+            padding: 40px 0;
         }
 
         .resume-container {
-            width: 950px;
+            width: 850px;
             background: var(--main-bg);
             display: flex;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            min-height: 1150px;
-            border-radius: 12px;
-            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 1100px;
         }
 
-        /* 左側欄 */
         .sidebar {
-            width: 32%;
+            width: 35%;
             background: var(--sidebar-bg);
-            color: white;
-            padding: 50px 30px;
+            color: var(--text-light);
+            padding: 40px 30px;
         }
 
         .profile-img {
             width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            border: 2px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+            border: 2px solid rgba(255,255,255,0.2);
         }
 
-        .sidebar-title {
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-        }
-
-        /* 聯絡資訊變色塊設計 */
-        .contact-item { margin-bottom: 25px; }
-        .contact-item strong { display: block; font-size: 18px; color: #bbb; margin-bottom: 8px; }
+        .sidebar-section { margin-bottom: 40px; }
+        .sidebar-title { font-size: 22px; font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; margin-bottom: 20px; }
         
-        .contact-box {
-            display: inline-block;
-            padding: 10px 15px;
-            border-radius: 6px;
-            background: rgba(255,255,255,0.05);
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
+        .main-content {
+            width: 65%;
+            padding: 60px 40px;
+            color: var(--text-dark);
         }
 
-        .contact-item.email:hover .contact-box { background: var(--email-color); transform: translateY(-3px); }
-        .contact-item.ig:hover .contact-box { background: var(--ig-gradient); transform: translateY(-3px); }
+        h1 { font-size: 48px; margin: 0; letter-spacing: 5px; color: #444; }
+        .subtitle { font-size: 18px; color: #777; margin-bottom: 50px; }
+        h2 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 5px; margin-bottom: 15px; }
+        p { line-height: 1.8; color: #555; text-align: justify; }
 
-        /* 技能條 */
-        .skill-bar { background: rgba(255,255,255,0.1); height: 10px; border-radius: 5px; margin-bottom: 15px; overflow: hidden; }
-        .skill-per { height: 100%; background: var(--accent-color); transition: 1.5s; }
-
-        /* 右側內容 */
-        .main-content { width: 68%; padding: 60px; color: var(--text-dark); }
-        h1 { font-size: 60px; margin: 0; color: #2c3e50; letter-spacing: 5px; }
-        .subtitle { font-size: 22px; color: #7f8c8d; margin-bottom: 50px; }
-        h2 { font-size: 28px; border-left: 6px solid var(--accent-color); padding-left: 15px; margin: 40px 0 20px; }
-        p { font-size: 19px; line-height: 1.8; color: #444; }
-
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .project-card { background: #f8f9fa; padding: 20px; border-radius: 8px; border-top: 4px solid var(--accent-color); }
-        
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s all ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .project-item { margin-bottom: 20px; }
+        .project-item strong { color: var(--accent-color); font-size: 17px; }
     </style>
 </head>
 <body>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="背景音樂輕柔.mp3" type="audio/mpeg">
+</audio>
+
+<div class="resume-container">
+    <div class="sidebar">
+        <img src="照片.jpg" class="profile-img" alt="楊程竣">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Contact</div>
+            <p><strong>Email:</strong> blanket9606160501@gmail.com</p>
+            <p><strong>Instagram:</strong> @yang._0616</p>
+        </div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Expertise</div>
+            <p>• Photography 攝影<br>• Video Editing 影片剪輯<br>• Adobe Illustrator<br>• HTML / CSS</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>楊程竣</h1>
+        <div class="subtitle">亞洲大學 資訊傳播學系</div>
+
+        <section class="main-section">
+            <h2>About Myself 自我介紹</h2>
+            <p>您好，我是楊程竣。我熱衷於數位媒體與影像製作，具備攝影、剪輯與網頁設計能力。我致力於將創意轉化為有影響力的數位內容。</p>
+        </section>
+
+        <section class="main-section">
+            <h2>Projects 作品專案</h2>
+            <div class="project-item">
+                <strong>環境保育專題</strong>
+                <p>研究咖啡渣手工肥皂的再利用流程與實務製作。</p>
+            </div>
+            <div class="project-item">
+                <strong>網頁開發實務</strong>
+                <p>設計並部署個人化數位履歷，整合多媒體元素提升使用者體驗。</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    // 自動播放邏輯
+    window.onload = function() {
+        var audio = document.getElementById("bgMusic");
+        
+        // 嘗試播放
+        var playPromise = audio.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                console.log("自動播放成功！");
+            }).catch(error => {
+                console.log("自動播放被攔截，請確保瀏覽器設定已允許音訊。");
+            });
+        }
+    };
+</script>
+
+</body>
+</html>
