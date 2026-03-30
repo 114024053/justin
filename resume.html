@@ -76,25 +76,35 @@
         body.active .resume-container { opacity: 1; filter: blur(0); }
 
         /* --- 以下為原本的履歷樣式 --- */
+        /* --- 以下是調整後的樣式 --- */
         .sidebar { width: 35%; background: var(--sidebar-bg); color: var(--text-light); padding: 40px 30px; }
         .profile-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 30px; border: 2px solid rgba(255,255,255,0.2); }
         .sidebar-section { margin-bottom: 40px; }
-        .sidebar-title { font-size: 22px; font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; margin-bottom: 20px; }
-        .contact-item { margin-bottom: 15px; font-size: 14px; }
-        .contact-item strong { display: block; font-size: 16px; margin-bottom: 5px; }
+        .sidebar-title { font-size: 24px; font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; margin-bottom: 20px; }
+        
+        /* 側邊欄：放大字體並加粗 */
+        .contact-item { margin-bottom: 15px; font-size: 16px; font-weight: 500; }
+        .contact-item strong { display: block; font-size: 18px; margin-bottom: 5px; font-weight: 700; }
         .contact-item a { color: #bdc3c7; text-decoration: none; }
+        
         .skill-list { list-style: none; padding: 0; }
-        .skill-list li { margin-bottom: 10px; font-size: 15px; position: relative; padding-left: 20px; }
+        .skill-list li { margin-bottom: 12px; font-size: 17px; position: relative; padding-left: 20px; font-weight: 500; }
         .skill-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent-color); }
+        
+        /* 主內容區 */
         .main-content { width: 65%; padding: 60px 40px; color: var(--text-dark); position: relative; }
         .header-name { margin-bottom: 50px; }
-        .header-name h1 { font-size: 48px; margin: 0; letter-spacing: 5px; color: #444; }
-        .header-name p { font-size: 18px; color: #777; margin: 5px 0 0 0; }
+        .header-name h1 { font-size: 48px; margin: 0; letter-spacing: 5px; color: #444; font-weight: 900; }
+        .header-name p { font-size: 22px; color: #555; margin: 5px 0 0 0; font-weight: bold; }
+        
         .main-section { margin-bottom: 40px; }
-        .main-section h2 { font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 5px; margin-bottom: 15px; }
-        .main-section p { line-height: 1.8; color: #555; text-align: justify; }
+        .main-section h2 { font-size: 24px; border-bottom: 2px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; font-weight: bold; }
+        
+        /* 內文：字體放大到 18px，顏色加深到 #333 更有質感 */
+        .main-section p { line-height: 1.8; color: #333; text-align: justify; font-size: 18px; font-weight: 400; }
+        
         .project-item { margin-bottom: 15px; }
-        .project-item strong { color: var(--accent-color); display: block; font-size: 17px; }
+        .project-item strong { color: var(--accent-color); display: block; font-size: 20px; font-weight: 700; }
     </style>
 </head>
 <body id="myBody">
