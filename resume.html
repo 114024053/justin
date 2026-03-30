@@ -11,6 +11,8 @@
             --text-dark: #333333;
             --text-light: #ffffff;
             --accent-color: #3498db;
+            --ig-gradient: linear-gradient(45deg, #f09433, #bc1888);
+            --email-color: #2ecc71;
         }
 
         body {
@@ -19,15 +21,17 @@
             background: #e0e0e0;
             display: flex;
             justify-content: center;
-            padding: 40px 0;
+            padding: 50px 0;
         }
 
         .resume-container {
-            width: 850px;
+            width: 950px; 
             background: var(--main-bg);
             display: flex;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            min-height: 1100px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            min-height: 1150px; 
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         /* 左側邊欄 */
@@ -35,197 +39,108 @@
             width: 35%;
             background: var(--sidebar-bg);
             color: var(--text-light);
-            padding: 40px 30px;
+            padding: 50px 30px;
         }
 
         .profile-img {
             width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
-            margin-bottom: 30px;
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-
-        .sidebar-section {
             margin-bottom: 40px;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
         }
 
-        .sidebar-title {
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            border-bottom: 2px solid rgba(255,255,255,0.3);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+        .sidebar-section { margin-bottom: 50px; }
+        .sidebar-title { font-size: 26px; font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 12px; margin-bottom: 25px; }
 
-        .contact-item {
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .contact-item strong {
-            display: block;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .contact-item a {
-            color: #bdc3c7;
+        /* 聯絡資訊色塊 */
+        .contact-item { margin-bottom: 25px; }
+        .contact-item strong { display: block; font-size: 20px; margin-bottom: 8px; color: #ddd; }
+        
+        .contact-box {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.1); 
+            color: white;
             text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
         }
 
-        .skill-list {
-            list-style: none;
-            padding: 0;
-        }
+        .contact-item.email:hover .contact-box { background: var(--email-color); transform: translateY(-3px); }
+        .contact-item.ig:hover .contact-box { background: var(--ig-gradient); transform: translateY(-3px); }
 
-        .skill-list li {
-            margin-bottom: 10px;
-            font-size: 15px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .skill-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
+        .skill-list { list-style: none; padding: 0; }
+        .skill-list li { margin-bottom: 15px; font-size: 20px; position: relative; padding-left: 25px; }
+        .skill-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent-color); font-weight: bold; }
 
         /* 右側主內容 */
         .main-content {
             width: 65%;
-            padding: 60px 40px;
+            padding: 70px 50px;
             color: var(--text-dark);
-            position: relative;
-        }
-
-        .main-content::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 150px;
-            background: linear-gradient(135deg, transparent 70%, #f0f0f0 70%);
-            z-index: 0;
-        }
-
-        .header-name {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 50px;
         }
 
         .header-name h1 {
-            font-size: 48px;
+            font-size: 65px; /* 名字加大 */
             margin: 0;
-            letter-spacing: 5px;
-            color: #444;
+            letter-spacing: 8px;
+            color: #333;
         }
 
         .header-name p {
-            font-size: 18px;
+            font-size: 26px; /* 學校加大 */
             color: #777;
-            margin: 5px 0 0 0;
-            letter-spacing: 2px;
+            margin-top: 10px;
         }
 
-        .main-section {
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 1;
-        }
+        .main-section { margin-bottom: 50px; }
+        .main-section h2 { font-size: 32px; color: #444; border-bottom: 3px solid var(--accent-color); padding-bottom: 10px; margin-bottom: 25px; }
+        .main-section p { font-size: 22px; line-height: 2; color: #555; text-align: justify; } /* 內文加大 */
 
-        .main-section h2 {
-            font-size: 22px;
-            color: #444;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .main-section p {
-            line-height: 1.8;
-            color: #555;
-            text-align: justify;
-        }
-
-        .project-item {
-            margin-bottom: 15px;
-        }
-
-        .project-item strong {
-            color: var(--accent-color);
-            display: block;
-            font-size: 17px;
-        }
-
-        /* 按鈕樣式優化 */
-        .btn-container {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
+        .project-item { margin-bottom: 30px; }
+        .project-item strong { color: var(--accent-color); font-size: 24px; display: block; margin-bottom: 8px; }
 
         button {
             background: #2ecc71;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 15px 35px;
+            border-radius: 6px;
+            font-size: 20px;
             cursor: pointer;
             transition: 0.3s;
         }
+        button:hover { background: #27ae60; transform: scale(1.05); }
 
-        button:hover {
-            background: #27ae60;
-        }
-
-        #music-btn {
-            background: #3498db;
-        }
-
-        #music-btn:hover {
-            background: #2980b9;
-        }
-
-        #msg {
-            font-size: 14px;
-            margin-top: 10px;
-            color: #27ae60;
-            font-weight: bold;
-        }
+        .footer-space { margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; color: #bbb; text-align: right; font-size: 16px; }
     </style>
 </head>
 <body>
 
-<audio id="bgMusic" loop>
+<audio autoplay loop>
     <source src="背景音樂輕柔.mp3" type="audio/mpeg">
-    您的瀏覽器不支援音訊元素。
 </audio>
 
 <div class="resume-container">
     <div class="sidebar">
-        <img src="photo.jpg" class="profile-img" alt="楊程竣的個人照">
+        <img src="照片.jpg" class="profile-img" alt="楊程竣">
         
         <div class="sidebar-section">
-            <div class="sidebar-title">My Contact</div>
-            <div class="contact-item">
+            <div class="sidebar-title">Contact</div>
+            <div class="contact-item email">
                 <strong>Email</strong>
-                <a href="mailto:blanket9606160501@gmail.com">blanket9606160501@gmail.com</a>
+                <a href="mailto:blanket9606160501@gmail.com" class="contact-box">blanket9606160501@gmail.com</a>
             </div>
-            <div class="contact-item">
+            <div class="contact-item ig">
                 <strong>Instagram</strong>
-                <a href="https://www.instagram.com/yang._0616" target="_blank">@yang._0616</a>
+                <a href="https://www.instagram.com/yang._0616" target="_blank" class="contact-box">@yang._0616</a>
             </div>
             <div class="contact-item">
                 <strong>Student ID</strong>
-                114024053
+                <span style="font-size: 20px; color: #eee; padding-left: 10px;">114024053</span>
             </div>
         </div>
 
@@ -250,7 +165,7 @@
         <div class="main-section">
             <h2>About Myself 自我介紹</h2>
             <p>
-                您好，我是楊程竣，就讀於亞洲大學資訊傳播學系。我熱衷於數位媒體與影像製作，具備基礎的攝影、剪輯與網頁設計能力。我特別享受成為眾人關注的焦點，並希望透過我的作品與觀眾產生強烈互動。
+                您好，我是楊程竣。我熱衷於數位媒體與影像製作，具備攝影、剪輯與網頁設計能力。我致力於將創意轉化為有影響力的數位內容。我特別享受成為眾人關注的焦點，並希望透過我的作品與觀眾產生強烈互動。
             </p>
         </div>
 
@@ -261,12 +176,8 @@
                 <p>咖啡渣手工肥皂再利用研究與實作。</p>
             </div>
             <div class="project-item">
-                <strong>影像創作</strong>
-                <p>霧峰農會酒莊訪談剪輯與視覺呈現。</p>
-            </div>
-            <div class="project-item">
                 <strong>網頁開發</strong>
-                <p>個人數位履歷網站設計與 GitHub Pages 部署。</p>
+                <p>個人數位履歷網站設計與 GitHub Pages 部署，整合動態互動與美感設計。</p>
             </div>
         </div>
 
@@ -274,38 +185,22 @@
             <h2>Education 教育背景</h2>
             <div class="project-item">
                 <strong>亞洲大學 | 2024 - 至今</strong>
-                <p>資訊傳播學系，專案研究與實作。</p>
+                <p>資訊傳播學系，專攻智慧傳播應用與新媒體內容。</p>
             </div>
         </div>
 
         <div class="main-section">
-            <div class="btn-container">
-                <button id="music-btn" onclick="toggleMusic()">🎵 播放/暫停音樂</button>
-                <button onclick="showMessage()">與我聯絡</button>
-            </div>
-            <p id="msg"></p>
+            <button onclick="showMessage()">與我聯絡 Connect Me</button>
+            <p id="msg" style="margin-top: 15px; font-size: 20px; color: #27ae60; font-weight: bold;"></p>
+        </div>
+
+        <div class="footer-space">
+            © 2024 Yang Cheng-Jun Digital Portfolio
         </div>
     </div>
 </div>
 
 <script>
-    var music = document.getElementById("bgMusic");
-    
-    // 監聽第一次點擊網頁時自動播放 (解決瀏覽器限制)
-    document.body.addEventListener('click', function() {
-        if (music.paused) {
-            music.play();
-        }
-    }, { once: true });
-
-    function toggleMusic() {
-        if (music.paused) {
-            music.play();
-        } else {
-            music.pause();
-        }
-    }
-
     function showMessage(){
         document.getElementById("msg").innerHTML = "✨ 感謝您的瀏覽！歡迎透過 Email 與我聯繫。";
     }
