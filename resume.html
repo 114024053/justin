@@ -103,7 +103,6 @@
             position: relative;
         }
 
-        /* 裝飾性背景波浪 (對應圖片設計) */
         .main-content::before {
             content: "";
             position: absolute;
@@ -166,6 +165,13 @@
             font-size: 17px;
         }
 
+        /* 按鈕樣式優化 */
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
         button {
             background: #2ecc71;
             color: white;
@@ -174,20 +180,34 @@
             border-radius: 4px;
             cursor: pointer;
             transition: 0.3s;
-            margin-top: 10px;
         }
 
         button:hover {
             background: #27ae60;
         }
 
+        #music-btn {
+            background: #3498db;
+        }
+
+        #music-btn:hover {
+            background: #2980b9;
+        }
+
         #msg {
             font-size: 14px;
             margin-top: 10px;
+            color: #27ae60;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
+
+<audio id="bgMusic" loop>
+    <source src="背景音樂輕柔.mp3" type="audio/mpeg">
+    您的瀏覽器不支援音訊元素。
+</audio>
 
 <div class="resume-container">
     <div class="sidebar">
@@ -230,7 +250,7 @@
         <div class="main-section">
             <h2>About Myself 自我介紹</h2>
             <p>
-                您好，我是楊程竣，就讀於亞洲大學資訊傳播學系。我熱衷於數位媒體與影像製作，具備基礎的攝影、剪輯與網頁設計能力。我喜歡挑戰新事物，並致力於將創意轉化為有影響力的數位內容。我特別享受成為眾人關注的焦點，並希望透過我的作品與觀眾產生強烈互動。
+                您好，我是楊程竣，就讀於亞洲大學資訊傳播學系。我熱衷於數位媒體與影像製作，具備基礎的攝影、剪輯與網頁設計能力。我特別享受成為眾人關注的焦點，並希望透過我的作品與觀眾產生強烈互動。
             </p>
         </div>
 
@@ -254,18 +274,38 @@
             <h2>Education 教育背景</h2>
             <div class="project-item">
                 <strong>亞洲大學 | 2024 - 至今</strong>
-                <p>資訊傳播學系，專攻智慧傳播應用與新媒體內容。</p>
+                <p>資訊傳播學系，專案研究與實作。</p>
             </div>
         </div>
 
         <div class="main-section">
-            <button onclick="showMessage()">與我聯絡</button>
+            <div class="btn-container">
+                <button id="music-btn" onclick="toggleMusic()">🎵 播放/暫停音樂</button>
+                <button onclick="showMessage()">與我聯絡</button>
+            </div>
             <p id="msg"></p>
         </div>
     </div>
 </div>
 
 <script>
+    var music = document.getElementById("bgMusic");
+    
+    // 監聽第一次點擊網頁時自動播放 (解決瀏覽器限制)
+    document.body.addEventListener('click', function() {
+        if (music.paused) {
+            music.play();
+        }
+    }, { once: true });
+
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+        } else {
+            music.pause();
+        }
+    }
+
     function showMessage(){
         document.getElementById("msg").innerHTML = "✨ 感謝您的瀏覽！歡迎透過 Email 與我聯繫。";
     }
