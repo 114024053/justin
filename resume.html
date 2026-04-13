@@ -105,6 +105,43 @@
         
         .project-item { margin-bottom: 15px; }
         .project-item strong { color: var(--accent-color); display: block; font-size: 20px; font-weight: 700; }
+        /* --- 增加的動態體驗感 --- */
+        
+        /* 1. 聯絡資訊與連結的微動 */
+        .contact-item a { transition: all 0.3s ease; display: inline-block; }
+        .contact-item a:hover { color: #fff; transform: translateX(5px); text-shadow: 0 0 8px rgba(255,255,255,0.5); }
+
+        /* 2. 技能清單的滑入感 */
+        .skill-list li { transition: all 0.3s ease; cursor: default; }
+        .skill-list li:hover { transform: translateX(10px); color: var(--accent-color); font-weight: bold; }
+
+        /* 3. 專案卡片的抬升效果 */
+        .project-item { 
+            padding: 10px; 
+            border-radius: 5px; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        }
+        .project-item:hover { 
+            background: rgba(52, 152, 219, 0.05); 
+            transform: translateY(-5px); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* 4. 大頭照的縮放 */
+        .profile-img { transition: transform 0.5s ease; border-radius: 5px; }
+        .profile-img:hover { transform: scale(1.03); }
+
+        /* 5. 進場時的漸進動畫 */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-section { opacity: 0; }
+        body.active .main-section { animation: fadeInUp 0.8s ease forwards; }
+        body.active .main-section:nth-child(1) { animation-delay: 0.2s; }
+        body.active .main-section:nth-child(2) { animation-delay: 0.4s; }
+        body.active .main-section:nth-child(3) { animation-delay: 0.6s; }
     </style>
 </head>
 <body id="myBody">
